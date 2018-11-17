@@ -1,0 +1,19 @@
+{
+  "name": "sprinklers",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "feather-icons": "^4.7.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-feather": "^1.1.4",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "homepage": "http://10.0.0.252/sprinklers/"
+}
