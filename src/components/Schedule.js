@@ -15,6 +15,7 @@ class Schedule extends Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleDays = this.handleDays.bind(this);
       this.checked = this.checked.bind(this);
+      this.handleDuration = this.handleDuration.bind(this);
   }
 
   componentDidMount() {
@@ -39,7 +40,8 @@ class Schedule extends Component {
         name: 'start_time',
         start_time: this.state.data.start_time,
         days: this.state.data.days,
-        program: this.state.data.program
+        program: this.state.data.program,
+        duration: this.state.data.sprinkler
       }),
       headers: {
       'content-type': 'application/json'
@@ -63,6 +65,13 @@ class Schedule extends Component {
     let name = event.target.name;
     let state = this.state.data;
     state[name] = event.target.value;
+    this.setState({data: state});
+  }
+
+  handleDuration(event) {
+    let name = event.target.name;
+    let state = this.state.data;
+    state.sprinkler[name] = event.target.value;
     this.setState({data: state});
   }
 
@@ -109,6 +118,18 @@ class Schedule extends Component {
         </div>
         <div name='days'>
           {days}
+        </div>
+        <div style={{'margin-top': '10px'}}>
+          Front Bushes <input
+            name="bush"
+            value={this.state.data.sprinkler.bush}
+            onChange={this.handleDuration}
+          /> <br/>
+          Front Yard <input
+            value={this.state.data.sprinkler.front_yard}
+            name="front_yard"
+            onChange={this.handleDuration}
+          /> <br/>
         </div>
       </div>
       ;
